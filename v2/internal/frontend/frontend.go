@@ -77,7 +77,7 @@ type MessageDialogOptions struct {
 }
 
 type Frontend interface {
-	Run(context.Context) error
+	Run(ctx context.Context) error
 	RunMainLoop()
 	ExecJS(js string)
 	Hide()
@@ -121,8 +121,9 @@ type Frontend interface {
 	WindowIsNormal() bool
 	WindowIsFullscreen() bool
 	WindowClose()
+	WindowPrint()
 
-	//Screen
+	// Screen
 	ScreenGetAll() ([]Screen, error)
 
 	// Menus
